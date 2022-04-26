@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 Route::get('/fakertest',function(){
     $faker = Faker\Factory::create();
@@ -27,3 +27,5 @@ Route::get('/fakertest',function(){
             ', Contact No: ' . $faker->phoneNumber . "\n");
     }
 });
+
+Route::get('/', 'TrainController@index');

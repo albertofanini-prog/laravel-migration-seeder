@@ -7,6 +7,14 @@
     <title>Booltrain</title>
 </head>
 <body>
-    Home
+    <h1>Departures of the day.</h1>
+    <ul>
+        @foreach ($departures as $go)
+        <li>
+            <p>Departure time: {{$go->departure_hour}}</p>
+        </li>
+        @endforeach
+    </ul>
+    <p>{{$trains[0]['brand']}}</p>
 </body>
 </html>
