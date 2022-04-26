@@ -12,21 +12,33 @@ class TrainSeeder extends Seeder
      * @return void
      */
     public function run(Faker $faker){
-        for( $i = 0; $i = 125; $i++){
+        for( $i = 0; $i <= 125; $i++){
             $train = new Train();
 
+            // $train -> brand = 'trenitalia';
+            // $train -> departure_station = 'milano';
+            // $train -> arrive_station = 'roma';
+            // $train -> departure_hour = '9';
+            // $train -> arrive_hour = '12';
+            // $train -> train_code = '0A8F9';
+            // $train -> number_of_carriage = '8';
+            // $train -> in_time = 'yes';
+            // $train -> delayed = 'no';
+            // $train -> deleted = 'no';
+
             $train -> brand = $faker->word();
-            $train -> arrive_station = $faker->state();
-            $train -> departure_station = $faker->state();
+            $train -> arrive_station = $faker->city();
+            $train -> departure_station = $faker->city();
             $train -> arrive_hour = $faker->time();
             $train -> departure_hour = $faker->time();
             $train -> train_code = $faker->numberBetween(5, 17);
             $train -> number_of_carriage = $faker->numberBetween(1, 25);
-            $train -> in_time = $faker->numberBetween(0, 1);
-            $train -> delayed = $faker->numberBetween(0, 1);
-            $train -> deleted = $faker->numberBetween(0, 1);
+            $train -> seats_available = $faker->numberBetween(1, 222);
+            $train -> in_time = $faker->boolean(true);
+            $train -> delayed = $faker->boolean(false);
+            $train -> deleted = $faker->boolean(false);
 
-            $train = new Train();
+            $train -> save();
         }
     }
 }
