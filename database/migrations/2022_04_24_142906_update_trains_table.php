@@ -14,7 +14,7 @@ class UpdateTrainsTable extends Migration
     public function up()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->smallInteger('seats_available')->after('number_of_carriage');
+            $table->smallInteger('seats_available', 200)->after('number_of_carriage');
         });
     }
 
