@@ -11,10 +11,12 @@
     <ul>
         @foreach ($departures as $go)
         <li>
+            <h4>{{$go->departure_station}} - {{$go->arrive_station}}</h4>
+            <p>Train code: {{$go->train_code}}</p>
             <p>Departure time: {{$go->departure_hour}}</p>
+            <p>Arrive time: {{$go->arrive_hour}}</p>
         </li>
         @endforeach
     </ul>
-    <p>{{$trains[0]['brand']}}</p>
 </body>
 </html>
